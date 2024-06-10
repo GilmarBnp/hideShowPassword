@@ -1,0 +1,100 @@
+gap: espaçamento entre o input e o título
+
+box-sizing: border-box: para o input não vazar da área limite do card
+
+
+Vamos deixar o password-container relative porque vamos deixar o ícone do olho como absolut, para não se mover
+aí precisamos deixar o elemento pai como relativo
+
+.password-contaneir {
+    position: relative;
+}
+
+Como podemos ver no html o elemento pai do ícone <i class"fas fa-eye/> é a div password-container
+<div class="password-container">
+            <input type="password" placeholder="Digite a sua senha" id="password">
+            <i class="fas fa-eye" id="togglePassword"></i>
+
+        </div>
+
+No css do input do password
+
+#password {
+    width: 100%;
+    
+}
+
+Nós estamos pegando o id da tag do input
+
+<input type="password" placeholder="Digite a sua senha" id="password">
+
+Nós podemos pegar um elemento tanto pela tag quanto pelo id, mas pelo id fica melhor,
+mais específico, pegando pelo id não mexe em todos os ícones do projeto
+
+#togglePassword{
+
+}
+
+Position absolut, assim o ícone vai ser referenciado pelo elemento pai
+
+#togglePassword {
+    position: absolute;
+}
+
+
+Para o íco ficar correto dentro do input, independente do tamanho da tela
+
+Colocamos o container pai como position relative e o container filho, ou seja, 
+opnde estar o ícone como position absolut 
+
+e podemos usar o calc(50% - 5px) para posicionar o ícone no local correto do input
+
+.password-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(117, 116, 114);
+    top: calc(50% - 5px);
+}
+
+A classe pai é o Card e dentro do card é onde fica o
+container do input do password 
+
+O card tem o height(altura) de 35% do total do body e width(largura) 30%
+
+width: 30%;
+height: 35%;
+
+.card {
+    background-color: rgb(37, 37, 37);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(104, 103, 103);
+    width: 30%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    box-sizing: border-box;
+}
+
+Aqui é o id do container do input
+
+Já o input onde digita a senha tem width de 100% do tamanho total do card
+ou seja, o input é do tamanho do card
+
+.password-container {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
